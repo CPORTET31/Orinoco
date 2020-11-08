@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Orinoco</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icon Fontwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop.css" rel="stylesheet">
+
+    <!-- Import JS Custom -->
+    <script src="scripts.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Orinoco</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a id="linkToPanier" class="nav-link" onclick="redirectToPanier()">Panier (0)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container panier">
+        <div class="row" id="#">
+            <div class="col-lg-3">
+                <img class="logo" href="index.html" src="images/logo.png" alt="logo"></img>
+            </div>
+
+            <div class="container mb-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+
+                            <table class="table table-striped">
+                                <h1>Récapitulatif de votre commande</h1>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> </th>
+                                        <th scope="col">Produit</th>
+                                        <th scope="col" class="text-right">Prix</th>
+                                        <th scope="col"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listProduct">
+    
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td style="text-align: right;"><strong>Total</strong></td>
+                                        <td class="text-right"><strong id="totalPrice">0 €</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+
+                        <form action="#" onsubmit="commandTeddiesFromAPI(); return false">
+                            <h1>Formulaire de commande</h1>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <label for="lastNameInput">Nom : </label>
+                                        <input type="text" class="form-control" id="lastNameInput"
+                                            placeholder="Entrer nom de famille" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="firstNameInput">Prénom :</label>
+                                        <input type="text" class="form-control" id="firstNameInput"
+                                            placeholder="Entrer prénom" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailInput">Adresse mail :</label>
+                                <input type="email" class="form-control" id="emailInput"
+                                    placeholder="Entrer adresse mail" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="addressInput">Adresse postale de facturation :</label>
+                                <input type="text" class="form-control" id="addressInput"
+                                    placeholder="Entrer adresse postale de facturation" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cityInput">Ville :</label>
+                                <input type="text" class="form-control" id="cityInput" placeholder="Entrer ville" required>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-12 col-md-12 text-right">
+                                    <button type="submit" class="btn btn-lg btn-block btn-success text-uppercase">Commander</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Orinico &copy; - Clément P</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!--Custom JavaScript -->
+    <script>
+        window.addEventListener('load', function () {
+            setSizePanierLink();
+            setPanierPage();
+        });
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

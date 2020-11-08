@@ -1,0 +1,194 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/templates/shop-homepage)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+a {
+  color:black;
+  cursor: pointer;
+}
+
+a:hover {
+  color:#9867C9;
+  text-decoration: none
+}
+
+.logo {
+  height:7rem;
+}
+
+.row {
+  margin-top: 5rem;
+}
+
+
+.list-group-item {
+  padding: 1rem 0rem 1rem 0.5rem;
+  border-bottom : 2px solid #9867C9;
+  border-top : 2px solid #9867C9;
+  border-right: none;
+  border-left: none;
+}
+
+.pb-5, .py-5 {
+  margin-top: 5rem;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #9867C9;
+  border-color: #9867C9;
+}
+
+.btn-color {
+  color: #fff;
+  background-color:white;
+  border-color: #9867C9;
+}
+
+.btn-color:hover {
+  color: #fff;
+  background-color: #ad74e2;
+  border-color: #633e87;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #633e87;
+  border-color: #633e87;
+}
+
+.text-muted  {
+  color: #9867C9!important;
+}
+
+.text-warning {
+  color: #9867C9!important;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #9867C9;
+  border-color: #9867C9;
+}
+
+.text-right .text-left {
+  padding-top: 1.5rem;
+}
+
+.btn-light {
+  color: #212529;
+  background-color: #d9dbdc;
+  border-color: #d9dbdc;
+}
+
+.title {
+  background-color: #9867C9;
+  color: #fff;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+.card {
+  border:none;
+}
+
+.list-group i {
+  margin-right: 15px;
+}
+
+.img-custom {
+  max-width: 500px;
+  margin: auto;
+}
+.small-img-custom {
+  max-width: 50px;
+  margin: auto;
+}
+
+
+
+/*confirmation */
+.title button {
+  border: 1px solid transparent;
+  padding: .375rem 1.5rem;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+.confirm {
+  margin: auto;
+  text-align: center;
+}
+.confirm h1 {
+  margin-bottom: 30px;
+}
+
+.confirm button {
+  cursor: default;
+}
+
+
+
+/* formulaire */
+.table {
+  width: 100%;
+  margin-bottom: 4rem;
+  color: #212529;
+  margin-top: 4em;
+}
+.panier h1 {
+  padding : 0 0 5px 0;
+  border-bottom : 2px solid #9867C9;
+  border-top : 2px solid #9867C9;
+}
+
+/*liste déroulante*/
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn::after{
+  content:" ▼";
+  font-size: 12px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-top: 2px solid #9867C9;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+  color: #9867C9;
+}
