@@ -49,7 +49,7 @@ function getProductsFromAPI (nameProduct) {
                         h4.appendChild(a);
     
                         let h5 = document.createElement("h5");
-                        h5.textContent = product.price + " €" ;
+                        h5.textContent = (parseFloat(product.price) / 100) + " €" ;
     
                         let p = document.createElement("p");
                         p.setAttribute("class", "card-text");
@@ -98,7 +98,7 @@ function getProductFromAPI (nameProduct, id) {
     
                 let h4 = document.createElement("h4");
                 h4.setAttribute("id", "priceProduct");
-                h4.textContent = product.price + " €" ;
+                h4.textContent = (parseFloat(product.price) / 100) + " €" ;
     
                 let p = document.createElement("p");
                 p.setAttribute("class", "card-text");
@@ -120,7 +120,9 @@ function getProductFromAPI (nameProduct, id) {
                             divDropdownContent.appendChild(aDropdownContentAttribute);
                         }
                         document.getElementById('addButton').hidden = false;
-                    } else if(nameProduct == 'cameras') {
+                    } 
+/*                    
+                    else if(nameProduct == 'cameras') {
                         divDropdownButton.textContent = "Lentilles ";
                         for(let i = 0; i < product.lenses.length; i++) {
                             let aDropdownContentAttribute = document.createElement("a");
@@ -137,6 +139,7 @@ function getProductFromAPI (nameProduct, id) {
                             divDropdownContent.appendChild(aDropdownContentAttribute);
                         }
                     }
+*/
                 divDropdown.appendChild(divDropdownButton);
                 divDropdown.appendChild(divDropdownContent);
     
@@ -154,22 +157,28 @@ function getProductFromAPI (nameProduct, id) {
 
 // addProductToPanier --> Ajoute le produit sélectionné au localStorage depuis la page product.html
 function addProductToPanier() {
-    let panier;
-    if(localStorage.getItem("panier")) {
-        panier = JSON.parse(localStorage.getItem("panier"));
+
+    if(document.getElementById('attributeSelected').textContent == "Couleurs ") {
+        alert("Veuillez selectionner une couleur avant de pouvoir ajouter le produit au panier.");
     } else {
-        panier = [];
+        let panier;
+        if(localStorage.getItem("panier")) {
+            panier = JSON.parse(localStorage.getItem("panier"));
+        } else {
+            panier = [];
+        }
+
+        let id = document.getElementById("idProduct").textContent;
+        let name = document.getElementById("nameProduct").textContent;
+        let price = document.getElementById("priceProduct").textContent;
+        let color = document.getElementById('attributeSelected').textContent;
+        let img = document.getElementById("imgProduct").getAttribute("src");
+        panier.push({id: id, name : name, price : price, color: color, img: img});
+
+        localStorage.setItem("panier", JSON.stringify(panier));
+
+        setSizePanierLink();
     }
-
-    let id = document.getElementById("idProduct").textContent;
-    let name = document.getElementById("nameProduct").textContent;
-    let price = document.getElementById("priceProduct").textContent;
-    let img = document.getElementById("imgProduct").getAttribute("src");
-    panier.push({id: id, name : name, price : price, img: img});
-
-    localStorage.setItem("panier", JSON.stringify(panier));
-
-    setSizePanierLink();
 }
 // deleteProductToPanier --> Supprime le produit sélectionné du localStorage depuis la page panier.html
 function deleteProductToPanier(indice) {
@@ -222,7 +231,7 @@ function setPanierPage() {
                 imgPanier.setAttribute("alt", panier[i].name);
             imgCasePanier.appendChild(imgPanier);
             let nameCasePanier = document.createElement("td");
-            nameCasePanier.textContent = panier[i].name;
+            nameCasePanier.textContent = panier[i].name + " (" + panier[i].color + ")";
             let priceCasePanier = document.createElement("td");
             priceCasePanier.setAttribute("class", "text-right");
             priceCasePanier.textContent = panier[i].price;

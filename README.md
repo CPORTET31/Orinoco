@@ -113,10 +113,9 @@ Ces tests pourraient être fait manuellement ou être implémenté de manière a
 
 ## Pour exécuter l'application
 
-* 1 : Dans un premier temps, installer et démarrer l'API (cf README.md dossier "BACK") localement sur le port 3000 (http://localhost:3000).
-* 2 : Ouvrez le fichier "index.html" (dossier FRONT) dans un navigateur quelconque.
-* 3 : Vous pouvez utiliser l'application.
+Prérequis : Vous devrez avoir Node et `npm` installés localement sur votre machine.
 
-## Remarques
-
-Pour le moment, seules les peluches sont ajoutables au panier et commandable.
+* 1 : Clonez ce dépôt. Depuis le dossier du projet "BACK", exécutez `npm install`.
+* 2 : Vous pouvez alors exécuter le serveur avec `node server` localement sur le port 3000 (http://localhost:3000).
+* 3 : Ouvrez le fichier "index.html" (dossier FRONT) dans un navigateur quelconque.
+* 4 : Vous pouvez utiliser l'application.
