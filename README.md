@@ -19,3 +19,7 @@ Prérequis : Vous devrez avoir Node et `npm` installés localement sur votre mac
 * 2 : Vous pouvez alors exécuter le serveur avec `node server` localement sur le port 3000 (http://localhost:3000).
 * 3 : Ouvrez le fichier "index.html" (dossier FRONT) dans un navigateur quelconque.
 * 4 : Vous pouvez utiliser l'application.
+
+## Plan de test
+
+Un plan de test est disponible dans [Plan de tests](./Plans_de_test.pdf)
